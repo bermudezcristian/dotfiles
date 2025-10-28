@@ -1,0 +1,14 @@
+# ~/.config/starship.toml
+# Starship configuration
+
+add_newline = false
+
+[directory]
+truncation_length = 3
+
+[git_status]
+staged = "[++](green)"
+untracked = "[??](yellow)"
+modified = "[~](red)"
+ahead = "⇡${count}"
+behind = "⇣${count}"
