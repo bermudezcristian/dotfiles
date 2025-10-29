@@ -213,7 +213,7 @@ setup_macos_core_defaults() {
     defaults write com.apple.WindowManager HideDesktop -bool true
     defaults write com.apple.WindowManager StageManagerHideWidgets -bool false
     defaults write com.apple.WindowManager StandardHideDesktopIcons -bool true
-    defaults write com.apple.WindowManager StandardHideWidgets -bool false
+    defaults write com.apple.WindowManager StandardHideWidgets -bool true
     # Restart Finder to apply changes
     killall Finder 2>/dev/null || true
     echo "✅ Core macOS defaults applied."
@@ -247,17 +247,17 @@ link_dotfiles() {
 
     mkdir -p "$CONFIG_DIR"
 
-    # Use folders for all configs for consistency
-    declare -A configs=(
-        ["$DOTFILES_DIR/.config/alacritty"]="$CONFIG_DIR/alacritty"
-        ["$DOTFILES_DIR/.config/starship"]="$CONFIG_DIR/starship"
-        ["$DOTFILES_DIR/.config/nvim"]="$CONFIG_DIR/nvim"
+    # Array of src:dest pairs
+    configs=(
+        "$DOTFILES_DIR/.config/alacritty:$CONFIG_DIR/alacritty"
+        "$DOTFILES_DIR/.config/starship:$CONFIG_DIR/starship"
+        "$DOTFILES_DIR/.config/nvim:$CONFIG_DIR/nvim"
     )
 
-    for src in "${!configs[@]}"; do
-        dest="${configs[$src]}"
+    for pair in "${configs[@]}"; do
+        src="${pair%%:*}"
+        dest="${pair##*:}"
 
-        # Remove existing symlink or file safely
         if [ -L "$dest" ] || [ -e "$dest" ]; then
             echo "🟡 Removing existing $dest"
             rm -rf "$dest"
