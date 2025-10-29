@@ -163,6 +163,7 @@ install_casks() {
         docker-desktop
 	    firefox
     	google-chrome
+        ngrok
         obs
         postman
         protonvpn
