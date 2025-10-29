@@ -160,9 +160,11 @@ install_casks() {
         anydesk
     	bitwarden
         discord
+        docker-desktop
 	    firefox
     	google-chrome
         obs
+        postman
         protonvpn
         qflipper
         slack
@@ -214,8 +216,11 @@ setup_macos_core_defaults() {
     defaults write com.apple.WindowManager StageManagerHideWidgets -bool false
     defaults write com.apple.WindowManager StandardHideDesktopIcons -bool true
     defaults write com.apple.WindowManager StandardHideWidgets -bool true
+    # Dock - Hide
+    defaults write com.apple.dock autohide -bool true
     # Restart Finder to apply changes
     killall Finder 2>/dev/null || true
+    killall Dock 2>/dev/null || true
     echo "✅ Core macOS defaults applied."
 }
 
@@ -252,6 +257,7 @@ link_dotfiles() {
         "$DOTFILES_DIR/.config/alacritty:$CONFIG_DIR/alacritty"
         "$DOTFILES_DIR/.config/starship:$CONFIG_DIR/starship"
         "$DOTFILES_DIR/.config/nvim:$CONFIG_DIR/nvim"
+        "$DOTFILES_DIR/.zshrc:$HOME/.zshrc"
     )
 
     for pair in "${configs[@]}"; do

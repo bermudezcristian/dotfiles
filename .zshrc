@@ -8,5 +8,8 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 . $(brew --prefix asdf)/libexec/asdf.sh
 
+# Alias
+alias vim='nvim'
+
 # Initialize Starship prompt
 eval "$(starship init zsh)"
