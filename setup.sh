@@ -171,6 +171,7 @@ install_casks() {
         slack
         spotify
         telegram
+        windows-app
         whatsapp
     )
 
