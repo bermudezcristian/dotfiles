@@ -11,5 +11,9 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Alias
 alias vim='nvim'
 
+# Enable zsh completion system
+autoload -Uz compinit
+compinit
+
 # Initialize Starship prompt
 eval "$(starship init zsh)"
