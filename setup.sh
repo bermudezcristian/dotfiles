@@ -117,6 +117,7 @@ install_asdf_plugins() {
     local plugins=(
         awscli
         nodejs
+        python
     )
 
     for plugin in "${plugins[@]}"; do
