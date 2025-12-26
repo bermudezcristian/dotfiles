@@ -140,7 +140,7 @@ install_asdf_plugins() {
 # -------------------------------
 install_formulas() {
     local formulas=(
-    	ripgrep
+    	ripgrep, mgba 
     )	    
     echo "📦 Installing homebrew formulas: ${formulas[*]}"
     for app in "${formulas[@]}"; do
