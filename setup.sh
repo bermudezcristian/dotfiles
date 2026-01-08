@@ -170,6 +170,7 @@ install_casks() {
         postman
         protonvpn
         qflipper
+        raspberry-pi-imager
         slack
         spotify
         telegram
