@@ -140,7 +140,9 @@ install_asdf_plugins() {
 # -------------------------------
 install_formulas() {
     local formulas=(
-    	ripgrep, mgba 
+    	ripgrep
+        mgba
+        anomalyco/tap/opencode
     )	    
     echo "📦 Installing homebrew formulas: ${formulas[*]}"
     for app in "${formulas[@]}"; do
@@ -159,7 +161,6 @@ install_formulas() {
 install_casks() {
     local casks=(
         alacritty
-        anydesk
     	bitwarden
         discord
         docker-desktop
@@ -174,7 +175,6 @@ install_casks() {
         slack
         spotify
         telegram
-        windows-app
         whatsapp
     )
 
