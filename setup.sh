@@ -167,6 +167,7 @@ install_casks() {
 	    firefox
     	google-chrome
         ngrok
+        linear-linear
         obs
         postman
         protonvpn
