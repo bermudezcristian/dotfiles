@@ -162,6 +162,8 @@ install_casks() {
     local casks=(
         alacritty
     	bitwarden
+        clickup
+        clockify
         discord
         docker-desktop
 	    firefox
@@ -236,15 +238,8 @@ setup_macos_core_defaults() {
 # -------------------------------
 configure_nvim() {
     echo "📝 Configuring Neovim..."
-    local packer_dir="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
-
-    # Install Packer if not already installed
-    if [ ! -d "$packer_dir" ]; then
-        echo "📦 Installing packer.nvim..."
-        git clone --depth 1 https://github.com/wbthomason/packer.nvim "$packer_dir"
-    else
-        echo "✅ packer.nvim already installed."
-    fi
+    # lazy.nvim bootstraps itself on first launch — no manual clone needed.
+    echo "✅ Neovim is configured. lazy.nvim will auto-install on first launch."
 }
 
 # -------------------------------
