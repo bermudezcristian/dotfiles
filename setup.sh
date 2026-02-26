@@ -87,7 +87,7 @@ install_mas_apps() {
     # Special handling for Xcode license
     if mas list | grep -q "497799835"; then
         echo "⚙️ Accepting Xcode license..."
-	sudo xcodebuild -license accept
+        sudo xcodebuild -license accept
         echo "✅ Xcode license accepted."
     fi
 
@@ -140,10 +140,10 @@ install_asdf_plugins() {
 # -------------------------------
 install_formulas() {
     local formulas=(
-    	ripgrep
+        ripgrep
         mgba
         anomalyco/tap/opencode
-    )	    
+    )
     echo "📦 Installing homebrew formulas: ${formulas[*]}"
     for app in "${formulas[@]}"; do
         if ! brew list "$app" &>/dev/null; then
@@ -161,13 +161,13 @@ install_formulas() {
 install_casks() {
     local casks=(
         alacritty
-    	bitwarden
+        bitwarden
         clickup
         clockify
         discord
         docker-desktop
-	    firefox
-    	google-chrome
+        firefox
+        google-chrome
         ngrok
         linear-linear
         obs
@@ -281,7 +281,7 @@ link_dotfiles() {
 configure_alacritty() {
     echo "🖌 Setting up Alacritty themes..."
 
-    local themes_dir="$HOME/.config/alacritty-themes"
+    local themes_dir="$HOME/.config/alacritty/themes"
     local repo_url="https://github.com/alacritty/alacritty-theme"
 
     # Ensure themes directory exists
@@ -337,6 +337,8 @@ main() {
     link_dotfiles
     configure_alacritty
     install_rosetta
+    echo "🧹 Cleaning up Homebrew cache..."
+    brew cleanup
     echo ""
     echo "🚀 Dotfiles setup complete!"
     echo "➡️  Restart your terminal or run: source ~/.zshrc"
