@@ -170,6 +170,7 @@ install_casks() {
         google-chrome
         ngrok
         linear-linear
+        microsoft-teams
         obs
         postman
         protonvpn
