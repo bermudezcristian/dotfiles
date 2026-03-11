@@ -235,7 +235,26 @@ setup_macos_core_defaults() {
 
 
 # -------------------------------
-# 10. Configure nvim
+# 10. Install jump plugin (directory bookmarks)
+# -------------------------------
+install_jump_plugin() {
+    local zsh_dir="$HOME/.config/zsh"
+    local plugin_file="$zsh_dir/jump.plugin.zsh"
+    local url="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/jump/jump.plugin.zsh"
+
+    mkdir -p "$zsh_dir"
+
+    if [ -f "$plugin_file" ]; then
+        echo "✅ jump.plugin.zsh already installed."
+    else
+        echo "📦 Downloading jump.plugin.zsh..."
+        curl -fsSL "$url" -o "$plugin_file"
+        echo "✅ jump.plugin.zsh installed."
+    fi
+}
+
+# -------------------------------
+# 11. Configure nvim
 # -------------------------------
 configure_nvim() {
     echo "📝 Configuring Neovim..."
@@ -334,6 +353,7 @@ main() {
     install_formulas
     install_casks
     setup_macos_core_defaults
+    install_jump_plugin
     configure_nvim
     link_dotfiles
     configure_alacritty

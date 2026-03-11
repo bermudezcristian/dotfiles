@@ -3,6 +3,9 @@
 # Enable zsh-autosuggestions
 [ -f "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
+# Enable jump plugin (directory bookmarks)
+[ -f "$HOME/.config/zsh/jump.plugin.zsh" ] && source "$HOME/.config/zsh/jump.plugin.zsh"
+
 # Enable zsh-syntax-highlighting (must be sourced last)
 [ -f "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
