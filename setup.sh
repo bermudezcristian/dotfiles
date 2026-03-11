@@ -178,6 +178,7 @@ install_casks() {
         raspberry-pi-imager
         slack
         spotify
+        tailscale-app
         telegram
         whatsapp
     )
