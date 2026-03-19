@@ -181,6 +181,7 @@ install_casks() {
         tailscale-app
         telegram
         whatsapp
+        windows-app
     )
 
     echo "📦 Installing homebrew casks: ${casks[*]}"
