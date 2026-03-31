@@ -116,6 +116,7 @@ install_asdf_plugins() {
     # Define plugins to install
     local plugins=(
         awscli
+        azure-cli
         nodejs
         python
     )
