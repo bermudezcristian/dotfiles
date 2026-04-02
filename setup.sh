@@ -119,6 +119,7 @@ install_asdf_plugins() {
         azure-cli
         nodejs
         python
+        terraform
     )
 
     for plugin in "${plugins[@]}"; do
